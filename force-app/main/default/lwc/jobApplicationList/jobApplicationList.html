@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="My Job Applications" icon-name="standard:opportunity">
+        <div class="slds-p-horizontal_medium">
+            <lightning-combobox label="Filter by status" value={status} options={options} onchange={handleChange}></lightning-combobox>
+            <template lwc:if={applications}>
+                <lightning-datatable key-field="Id" data={applications} columns={columns} hide-checkbox-column></lightning-datatable>
+            </template>
+            <template lwc:if={error}><p class="slds-text-color_error">{error}</p></template>
+        </div>
+    </lightning-card>
+</template>
